@@ -1,0 +1,38 @@
+#! usr/bin/env python3
+import re
+dict_count={}
+sequence=''
+file_obj=open("Python_08.fasta","r")
+for line in file_obj:
+  line=line.rstrip()
+  match=re.search(">",line)
+  if match:
+#    A=sequence.count['A']   
+#sequence=''
+    print(line)
+  else:
+    sequence=sequence+line
+print(sequence)
+string1=str(sequence)
+print(string1)
+set1=set(string1)
+print(set1)
+A=string1.count('A')
+T=string1.count('T')
+G=string1.count('G')
+C=string1.count('C')
+print(A)
+print(T)
+print(G)
+print(C)
+dict_count['A']=A
+dict_count['T']=T
+dict_count['G']=G
+dict_count['C']=C
+print(dict_count)
+for key in dict_count:
+  print(key,':',dict_count[key])
+
+
+
+
